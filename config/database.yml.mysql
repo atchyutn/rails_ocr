@@ -1,0 +1,26 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: rails_ocr_development
+  pool: 5
+  username: 
+  password: 
+
+test:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: rails_ocr_test
+  pool: 5
+  username: 
+  password: 
+
+production:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: rails_ocr_production
+  pool: 5
+  username: 
+  password: 
