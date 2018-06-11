@@ -3,9 +3,10 @@ class DefaultController < ApplicationController
   require 'ocr_space'
 
   def index
+    url = params[:url]
     resource = OcrSpace::Resource.new(apikey: "f1a06ec2ec88957")
 
-    url = "http://i61.tinypic.com/dh8va9.jpg"
+    # url = "https://i.stack.imgur.com/t3qWG.png"
 
     @result = resource.clean_convert(url: url)
   end
