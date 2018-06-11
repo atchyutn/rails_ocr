@@ -1,12 +1,12 @@
 class DefaultController < ApplicationController
   include OcrSpace
-
+  require 'ocr_space'
 
   def index
-    # puts hello
-    OcrSpace
-  end
-  # puts "\n\n\n #{OcrSpace.hello} \n\n\n"
+    resource = OcrSpace::Resource.new(apikey: "f1a06ec2ec88957")
 
-  # puts OcrSpace::hello
+    url = "http://i61.tinypic.com/dh8va9.jpg"
+
+    @result = resource.clean_convert(url: url)
+  end
 end
