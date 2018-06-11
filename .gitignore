@@ -15,5 +15,7 @@
 /log/*
 !/log/.keep
 /tmp
-database.yml
+
+#Ignore the config settings & Secrets file
 /config/database.yml
+/config/secrets.yml

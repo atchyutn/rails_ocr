@@ -4,7 +4,7 @@ class DefaultController < ApplicationController
 
   def index
     url = params[:url]
-    resource = OcrSpace::Resource.new(apikey: "f1a06ec2ec88957")
+    resource = OcrSpace::Resource.new(apikey: Rails.application.secrets.OCR_API_KEY)
 
     # url = "https://i.stack.imgur.com/t3qWG.png"
 
