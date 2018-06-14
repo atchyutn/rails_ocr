@@ -1,10 +1,27 @@
 <h1>Image to Text</h1>
 
 <%= form_tag "/" do %>
-  <label for="url">Image URL</label>
-  <%= text_field_tag :url%>
- <%= submit_tag "Submit" %>
+ 	 <label for="url">Image URL</label>
+ 	 <%= text_field_tag :url%>
+ 	 <%= submit_tag "Submit" %>
 <% end %>
 
 </br>
 <%= @result %>
+
+<br>
+<hr>
+<br>
+
+
+<% if !@result.empty? && !@result.nil?%>
+
+	<b>Name</b> : <%= @result.slice((@result.index('MR.')+4 )..(@result.index('Dr')-2)).tr("0-9", "").strip if @result.index('MR.') && @result.index('Dr')
+				  %><br>
+
+	<b>Age</b> : <%= @result.scan(/(\d*\s(Years))/).flatten.first %></br>
+
+	<b>Test type</b> : <%= !@result.scan(/((TEST NAME)\s\w*)/).flatten.first.nil? ? @result.scan(/((TEST NAME)\s\w*)/).flatten.first.split(" ").last : "NOT FOUND" %></br>
+<% end %>
+
+
