@@ -20,8 +20,36 @@
 				  %><br>
 
 	<b>Age</b> : <%= @result.scan(/(\d*\s(Years))/).flatten.first %></br>
-
+	<br>
 	<b>Test type</b> : <%= !@result.scan(/((TEST NAME)\s\w*)/).flatten.first.nil? ? @result.scan(/((TEST NAME)\s\w*)/).flatten.first.split(" ").last : "NOT FOUND" %></br>
+	<br>
+	<b>Regn No:</b> : <%= @result.scan(/(\d*\s(Dr.))/).flatten.first.split(" ").first %>
+	<br>
+	<b>Ref by:</b> : <%= @result.scan(/((Dr.)(\s[A-Z|\s]*))/).flatten.first.split(" ")[0..-2].join(" ") %>
+	<br>
+	<b>Sample Type</b> : <%= @result.scan(/((Dr.)(\s[A-Z|\s]*[a-z]*))/).flatten.first.split(" ").last %>
+	<br>
+	<b>Sex</b> : <%= @result.scan(/(Male|Female)/).flatten.first %>
+	<br>
+	<b>Regn Center</b> : <%= @result.scan(/(Years\s\w*)/).flatten.first.split(" ").last %>
+	<br>
+	<b>Serum Status</b> : <%= @result.scan(/(RESULT\s\w*)/).flatten.first.split(" ").last %>
+	<br>
+	<b>Triglycerides</b> : <%= @result.scan(/(RESULT\s\w*((\s*\d\.?)*))/).flatten[1].split(" ")[0] %>
+	<br>
+	<b>Total Cholesterol</b> : <%= @result.scan(/(RESULT\s\w*((\s*\d\.?)*))/).flatten[1].split(" ")[1] %>
+	<br>
+	<b>LDL Cholesterol</b> :<%= @result.scan(/(RESULT\s\w*((\s*\d\.?)*))/).flatten[1].split(" ")[2] %>
+	<br>
+	<b>HDL Cholesterol</b> :<%= @result.scan(/(RESULT\s\w*((\s*\d\.?)*))/).flatten[1].split(" ")[3] %>
+	<br>
+	<b>VLDL</b> :<%= @result.scan(/(RESULT\s\w*((\s*\d\.?)*))/).flatten[1].split(" ")[4] %>
+	<br>
+	<b>Total Cholesterol/HDL Cholesterol ratio</b> :<%= @result.scan(/(RESULT\s\w*((\s*\d\.?)*))/).flatten[1].split(" ")[5] %>
+	<br>
+	<b>LDL Cholesterol/HDL Cholesterol ratio</b> :<%= @result.scan(/(RESULT\s\w*((\s*\d\.?)*))/).flatten[1].split(" ")[6] %>
 <% end %>
+
+<%= image_tag(@image_url) %>
 
 
