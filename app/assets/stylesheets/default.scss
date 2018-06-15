@@ -1,3 +1,26 @@
 // Place all the styles related to the Default controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  overflow-x: hidden;
+}
+
+.heading{
+  background: #C6FFDD;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  padding: 1em;
+  margin: 1.5em;
+}
+
+.submit{
+  margin-top: 1em;
+  float: right;
+}
+
+.report-img{
+  width: 100%;
+  height: auto;
+}
