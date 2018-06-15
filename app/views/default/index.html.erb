@@ -16,7 +16,7 @@
 
 <% if !@result.empty? && !@result.nil?%>
 
-<b>Name</b> : <%= @result.slice((@result.index('MR.')+4 )..(@result.index('Dr')-2)).tr("0-9", "").strip if @result.index('MR.') && @result.index('Dr')
+	<b>Name</b> : <%= @result.slice((@result.index('MR.')+4 )..(@result.index('Dr')-2)).tr("0-9", "").strip if @result.index('MR.') && @result.index('Dr')
 				  %><br>
 	<b>Age</b> : <%= @result.scan(/(\d*\s(Years))/).flatten.first %></br>
 	<br>
