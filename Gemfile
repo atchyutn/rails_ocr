@@ -52,3 +52,9 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+#Access the keys from secrets.yml for heroku production
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
+
+end
+
